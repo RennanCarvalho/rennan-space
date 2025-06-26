@@ -1,0 +1,97 @@
+:root {
+    /* Main Palette */
+    --color-primary: #2b1d5a;
+    --color-secondary: #a296ca;
+    --color-tertiary: #282b75;
+    --color-quaternary: #1d161e;
+    
+    /* Font Palette */
+    --color-font-white: #fafafa;
+    --color-font-gray: #ababab;
+
+    /* Deep Space */
+    --color-ds-1: #0d0e3f;
+    --color-ds-2: #2b1d5a;
+    --color-ds-3: #1d161e;
+    --color-ds-4: #000014;
+
+    /* Size*/
+    --font-size-s: 1.0rem;
+    --font-size-m: 1.4rem;
+    --font-size-l: 1.8rem;
+
+    scroll-behavior: smooth;
+}
+
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('assets/fonts/SpaceGrotesk-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('assets/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('assets/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('assets/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Space Grotesk', 'Roboto', 'Helvetica Neue', 'sans-serif';
+    background: radial-gradient(
+        circle at 50% -20%,
+        var(--color-ds-1) 20%,
+        var(--color-ds-2) 45%,
+        var(--color-ds-3) 70%,
+        var(--color-ds-4) 100%
+        );
+}
+
+button { cursor: pointer; }
+html, body { height: 100%; }
+
+h1 {
+    font-size: calc(var(--font-size-l) * 1.4);
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: calc(var(--font-size-l) * 1);
+    line-height: 1;
+}
+
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.glass {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}

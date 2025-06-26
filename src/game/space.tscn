@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://hmijuwtafuxp"]
+
+[node name="Space" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0998851, -0.000336766, 0.000100613)
+
+[node name="Casa" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Chao" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500003, 0.055, 0)
+use_collision = true
+size = Vector3(5, 0.1, 9)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Casa/Chao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.905, 0.0250001, 3.6)
+operation = 2
+size = Vector3(1.2, 0.5, 1.8)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Casa/Chao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23, 0.045, 4.2)
+operation = 2
+size = Vector3(2.56, 0.21, 0.6)
+
+[node name="Parede" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500002, 1.36, -2.56)
+size = Vector3(5, 2.5, 0.05)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Casa/Parede"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77, -0.23, -0.0449998)
+operation = 2
+size = Vector3(1.5, 2, 0.24)
+
+[node name="Parede2" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.27, 1.36, -1.39)
+size = Vector3(2.3, 2.5, 0.05)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Casa/Parede2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57, -0.26, -0.0200013)
+operation = 2
+size = Vector3(0.7, 2, 0.24)
+
+[node name="Parede3" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.845, 1.36, -0.21)
+size = Vector3(1.2, 2.5, 0.05)
+
+[node name="Parede4" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.43, 1.35, -1.38)
+size = Vector3(2.3, 2.5, 0.05)
+
+[node name="Divisoria" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.485, 1.36, 1.41)
+size = Vector3(2.1, 2.5, 0.05)
+
+[node name="Cama" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49, 0.41, 2.28)
+size = Vector3(2, 0.6, 1.6)
+
+[node name="Sala" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.005, 0.56, -1.6)
+size = Vector3(1.01, 0.9, 1.6)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Casa/Sala"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215, 0.26, 0.03)
+operation = 2
+size = Vector3(0.77, 0.5, 1.66)
+
+[node name="Hack" type="CSGBox3D" parent="Casa/Sala"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94, -0.16, -0.335)
+size = Vector3(0.6, 0.6, 1.23)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Casa/Sala/Hack"]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -0.105001, 1.45, -0.00499892)
+size = Vector3(0.4, 1.2, 0.025)
+
+[node name="Mesa" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.27, 0.77, 0.52)
+size = Vector3(0.5, 1.7, 0.025)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Casa/Mesa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.829999, 0.33)
+size = Vector3(0.5, 0.68, 0.025)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Casa/Mesa/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.47035e-07, -1.67)
+size = Vector3(0.5, 0.68, 0.025)
+
+[node name="Geladeira" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.075, 1.01, 2.38)
+size = Vector3(0.7, 1.8, 0.6)
+
+[node name="AmarioCozinha" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.185, 0.520001, 0.95)
+size = Vector3(0.5, 2.25, 0.8)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Casa/AmarioCozinha"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.81, 0.0749995)
+operation = 2
+size = Vector3(0.56, 0.61, 0.67)
+
+[node name="ArmarioCozinha" type="CSGBox3D" parent="Casa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.205, 2.35, 1.26)
+size = Vector3(0.4, 2.87, 0.5)
