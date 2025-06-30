@@ -1,12 +1,11 @@
 section {
     font-size: var(--font-size-s);
-    position: sticky;
     height: 100px;
 }
 
 nav {
     background-color: color-mix(in oklab, white 10%, transparent);
-    padding: 5px 10px;
+    padding: 4px;
     border-radius: 50px;
 }
 
@@ -14,4 +13,17 @@ nav a {
     padding: 5px 20px;
     border-radius: 50px;
     color: var(--color-font-gray);
+}
+
+.selected {
+  background-color: color-mix(in oklab, white 20%, transparent);
+  color: var(--color-font-white);
+  font-weight: 600;
+  box-shadow: 0 0 .2rem var(--color-font-white),
+              0 0 2rem var(--color-primary),
+              0 0 0.8rem var(--color-secondary),
+              0 0 2.8rem var(--color-tertiary),
+              inset 0 0 1.3rem var(--color-quaternary);
+
+  
 }
