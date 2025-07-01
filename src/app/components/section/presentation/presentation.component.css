@@ -1,7 +1,10 @@
 .presentation {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     gap: 50px;
     width: 100%;
     color: var(--color-font-gray);
+}
+img {
+  height: 200px;
 }

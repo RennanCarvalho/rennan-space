@@ -117,6 +117,48 @@ h2 {
     -webkit-backdrop-filter: blur(1px);
 }
 
+.glow-text {
+  color: #a296ca; /* ou outra da sua paleta */
+  text-shadow:
+    0 0 20px #a296ca,
+    0 0 40px #2b1d5a;
+  font-family: 'JetBrains Mono', monospace;
+}
+.glow-box {
+  border: 1px solid #a296ca;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.02); /* leve transparência */
+
+  box-shadow:
+    inset 0 0 12px #2b1d5a,
+    0 0 8px #a296ca,
+    inset 0 0 16px #a296ca,
+    inset 0 0 32px #2b1d5a;
+  
+  color: #fff;
+}
+
+.glow-button {
+  border: 1px solid #a296ca;
+  background: transparent;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a296ca;
+  text-shadow: 0 0 4px #a296ca;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #2b1d5a;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 0 12px #a296ca,
+    0 0 24px #a296ca;
+}
+
 
 
 /* Scrollbar */
