@@ -16,7 +16,8 @@ const ICONS = [
   'moon',
   'power',
   'thumbs-up',
-  'youtube'];
+  'youtube',
+  'logo'];
 
 @Injectable({ providedIn: 'root' })
 export class IconService {

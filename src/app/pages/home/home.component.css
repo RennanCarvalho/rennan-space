@@ -5,29 +5,10 @@
 }
 
 section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    box-sizing: border-box;
-    height: var(--section-height);
-    max-width: var(--max-width-l);
     width: var(--max-width-l);
 }
 
-section:nth-child(even) {
-    background-color: var(--section-color-even);
-}
-
-section:nth-child(odd) {
-    background-color: var(--section-color-odd);
-}
-
-img {
-    width: 150px;
-    aspect-ratio: auto;
-}
-
-
+/* 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -55,4 +36,4 @@ img {
 
 .div5 {
     grid-area: 2 / 2 / 3 / 3;
-}
+} */
