@@ -28,7 +28,9 @@ span {
     transform: scale(0.4);
     animation: shine 0s linear infinite;
     animation-delay: 0;
+    transition: all ease-in-out 4s;
 }
+
 
 @keyframes orbit {
     100% { transform: rotate(360deg);    }

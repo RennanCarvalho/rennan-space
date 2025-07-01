@@ -1,12 +1,17 @@
-import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 
 enum EObject {
-  brownStar = "var(--color-brownstar)",
-  redStar = "var(--color-redstar)",
-  whiteStar = "var(--color-whitestar)",
-  neutronStar = "var(--color-neutronstar)",
-  rockyPlanet = "var(--color-rockyplanet)",
-  gasPlanet = "var(--color-gasplanet)"
+  brownStar = 'var(--color-brownstar)',
+  redStar = 'var(--color-redstar)',
+  whiteStar = 'var(--color-whitestar)',
+  neutronStar = 'var(--color-neutronstar)',
+  rockyPlanet = 'var(--color-rockyplanet)',
+  gasPlanet = 'var(--color-gasplanet)',
 }
 
 const values = Object.values(EObject) as EObject[];
@@ -21,25 +26,70 @@ const values = Object.values(EObject) as EObject[];
 export class SpaceComponent {
   @ViewChild('space') space!: ElementRef<HTMLDivElement>;
 
-  ngAfterViewInit(): void {
+  private keyHandler = this.handleKeyPress.bind(this);
+
+  ngAfterViewInit() {
     this.BigBang();
+    window.addEventListener('keydown', this.keyHandler);
   }
 
-  BigBang(){
-    for(let i = 0; i < 450; i++){
+  ngOnDestroy() {
+    window.removeEventListener('keydown', this.keyHandler);
+  }
+
+  private getRandom(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  BigBang() {
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < 500; i++) {
       const object = document.createElement('span');
-      const height = Math.floor(Math.random() * 4);
-      const top = Math.floor(Math.random() * 100);
-      const left = Math.floor(Math.random() * 100);
-      const animationDuration = Math.floor(Math.random() * 10 + 4);
 
-      object.style.height = `${height}px`;
-      object.style.top = `${top}%`;
-      object.style.left = `${left}%`;
-      object.style.animationDuration = `${animationDuration}s`;
-      object.style.backgroundColor = values[Math.floor(Math.random() * values.length)];
+      const height = this.getRandom(1, 3);
+      const top = this.getRandom(0, 100);
+      const left = this.getRandom(0, 100);
+      const animationDuration = this.getRandom(4, 14);
+      const color = values[this.getRandom(0, values.length - 1)];
+      const shouldShine = Math.random() < 0.1;
 
-      this.space.nativeElement.appendChild(object);
+      object.style.cssText = `
+        height: ${height}px;
+        top: ${top}%;
+        left: ${left}%;
+        animation-duration: ${animationDuration}s;
+        background-color: ${color};
+      `;
+
+      if (shouldShine) {
+        object.classList.add('brighter');
+      }
+
+      fragment.appendChild(object);
+    }
+
+    this.space.nativeElement.appendChild(fragment);
+  }
+
+  Rewrite() {
+    const stars = this.space.nativeElement.children;
+    for (let i = 0; i < stars.length; i++) {
+      const star = stars[i] as HTMLElement;
+
+      const newTop = this.getRandom(0, 100);
+      const newLeft = this.getRandom(0, 100);
+      const newSize = this.getRandom(1, 3);
+
+      star.style.top = `${newTop}%`;
+      star.style.left = `${newLeft}%`;
+      star.style.height = `${newSize}px`;
+    }
+  }
+
+  handleKeyPress(event: KeyboardEvent): void {
+    if (event.key.toLowerCase() === 'r') {
+      this.Rewrite();
     }
   }
 }
