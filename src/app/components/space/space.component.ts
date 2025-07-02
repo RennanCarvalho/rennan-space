@@ -87,9 +87,17 @@ export class SpaceComponent {
     }
   }
 
+  private canRewrite = true;
+  private rewriteCooldown = 10000;
+
   handleKeyPress(event: KeyboardEvent): void {
-    if (event.key.toLowerCase() === 'r') {
+    if (event.key.toLowerCase() === 'r' && this.canRewrite) {
       this.Rewrite();
+      this.canRewrite = false;
+
+      setTimeout(() => {
+        this.canRewrite = true;
+      }, this.rewriteCooldown);
     }
   }
 }
