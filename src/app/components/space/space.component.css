@@ -30,12 +30,3 @@ span {
     animation-delay: 0;
     transition: all ease-in-out 4s;
 }
-
-
-@keyframes orbit {
-    100% { transform: rotate(360deg);    }
-}
-
-@keyframes shine {
-    50% { opacity: 1; transform: scale(1); }
-}
