@@ -1,0 +1,7 @@
+.divisor {
+    box-sizing: border-box;
+    background: linear-gradient(1deg,rgba(32, 24, 43, 0.85) 40%, rgba(48, 36, 94, 0.5) 100%);
+    width: 100vw;
+    height: 70px;
+
+}

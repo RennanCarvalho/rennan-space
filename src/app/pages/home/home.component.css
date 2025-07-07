@@ -5,7 +5,7 @@
 }
 
 section {
-    width: var(--max-width-l);
+        color: var(--color-font-gray);
 }
 
 /* 
