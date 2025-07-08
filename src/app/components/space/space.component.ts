@@ -45,7 +45,7 @@ export class SpaceComponent {
     const fragment = document.createDocumentFragment();
 
     for (let i = 0; i < 500; i++) {
-      const object = document.createElement('span');
+      const object = document.createElement('star');
 
       const height = this.getRandom(1, 3);
       const top = this.getRandom(0, 100);
@@ -61,6 +61,7 @@ export class SpaceComponent {
         animation-duration: ${animationDuration}s;
         background-color: ${color};
       `;
+
 
       if (shouldShine) {
         object.classList.add('brighter');

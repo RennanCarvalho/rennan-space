@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-divisor',
-  imports: [],
-  templateUrl: './divisor.component.html',
-  styleUrl: './divisor.component.css'
+  standalone: true,
+  template: `
+    <div class="divisor" [class.reverse]="isReverse"></div>
+  `,
+  styleUrls: ['./divisor.component.css']
 })
 export class DivisorComponent {
-
+  @Input() isReverse = false;
 }

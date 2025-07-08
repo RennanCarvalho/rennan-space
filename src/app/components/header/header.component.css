@@ -1,7 +1,19 @@
 section {
     font-size: var(--font-size-s);
-    height: 100px;
+    height: 70px;
 }
+
+.logo {
+    position: absolute;
+    left: 250px;
+}
+
+mat-icon {
+  color: var(--color-font-gray);
+  width: 50px;
+  height: auto;
+}
+
 
 nav {
     background-color: color-mix(in oklab, white 10%, transparent);

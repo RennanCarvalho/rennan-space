@@ -23,7 +23,7 @@
     overflow: hidden;
 }
 
-span {
+star {
     opacity: 0.4;
     transform: scale(0.4);
     animation: shine 0s linear infinite;
