@@ -11,6 +11,7 @@ const ICONS = [
   'home',
   'instagram',
   'linkedin',
+  'mail',
   'maximize',
   'minimize',
   'moon',

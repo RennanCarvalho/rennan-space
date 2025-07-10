@@ -1,12 +1,29 @@
 <section class="glass smoke flex-row">
+
   <div class="logo">
     <mat-icon svgIcon="logo"></mat-icon>
   </div>
-  
+
   <nav class="glass flex-row">
     <a [routerLink]="['/']" routerLinkActive="selected" [routerLinkActiveOptions]="{ exact: true }">home</a>
     <a [routerLink]="['/game']" routerLinkActive="selected">game</a>
     <a [routerLink]="['/more']" routerLinkActive="selected">more</a>
   </nav>
-</section>
 
+<div class="social flex-row holographic-container">
+  <div class="holographic-card">
+    <a href="#"><mat-icon svgIcon="github"></mat-icon></a>
+  </div>
+  <div class="holographic-card">
+    <a href="#"><mat-icon svgIcon="mail"></mat-icon></a>
+  </div>
+  <div class="holographic-card">
+    <a href="#"><mat-icon svgIcon="linkedin"></mat-icon></a>
+  </div>
+  <div class="holographic-card">
+    <a href="#"><mat-icon svgIcon="instagram"></mat-icon></a>
+  </div>
+</div>
+
+
+</section>
