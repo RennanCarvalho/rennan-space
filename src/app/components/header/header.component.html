@@ -1,6 +1,6 @@
 <section class="glass smoke flex-row">
 
-  <div class="logo">
+  <div class="logo holographic">
     <mat-icon svgIcon="logo"></mat-icon>
   </div>
 
@@ -10,20 +10,15 @@
     <a [routerLink]="['/more']" routerLinkActive="selected">more</a>
   </nav>
 
-<div class="social flex-row holographic-container">
-  <div class="holographic-card">
-    <a href="#"><mat-icon svgIcon="github"></mat-icon></a>
+  <div class="social flex-row">
+      <a href="#" class=""><mat-icon svgIcon="github"></mat-icon></a>
+      <a href="#" class=""><mat-icon svgIcon="mail"></mat-icon></a>
+      <a href="#" class=""><mat-icon svgIcon="linkedin"></mat-icon></a>
+      <a href="#" class=""><mat-icon svgIcon="instagram"></mat-icon></a>
   </div>
-  <div class="holographic-card">
-    <a href="#"><mat-icon svgIcon="mail"></mat-icon></a>
-  </div>
-  <div class="holographic-card">
-    <a href="#"><mat-icon svgIcon="linkedin"></mat-icon></a>
-  </div>
-  <div class="holographic-card">
-    <a href="#"><mat-icon svgIcon="instagram"></mat-icon></a>
-  </div>
-</div>
 
-
+  <div class="">
+    <button (click)="Rewrite()" class="">rewrite</button>
+    <button (click)="BigBang()" class="">big bang</button>
+  </div>
 </section>

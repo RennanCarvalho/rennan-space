@@ -19,12 +19,10 @@
     50% { opacity: 1; transform: scale(1); }
 }
 
-/* Waves */
-@keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
+/* Transitions */
+@keyframes fadeInOut {
+  0%   { opacity: 1; }
+  10%  { opacity: 0.4; }
+  90%  { opacity: 0.4; }
+  100% { opacity: 1; }
 }

@@ -1,0 +1,10 @@
+/* Div */
+.glass {
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.glass.smoke {
+    background-color: rgb(0, 0, 0, 0.2);
+
+}

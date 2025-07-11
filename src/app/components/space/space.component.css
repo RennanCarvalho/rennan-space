@@ -1,10 +1,10 @@
 * {
-    --color-brownstar : #671911;
-    --color-redstar : #ffe595;
-    --color-whitestar : #ffffff;
-    --color-neutronstar : #69cffb;
-    --color-rockyplanet : #446286;
-    --color-gasplanet : #c2a279;
+    --color-brownstar: #671911;
+    --color-redstar: #ffe595;
+    --color-whitestar: #ffffff;
+    --color-neutronstar: #69cffb;
+    --color-rockyplanet: #446286;
+    --color-gasplanet: #c2a279;
 }
 
 .space {
@@ -15,7 +15,7 @@
     z-index: -10;
 }
 
-.space > * {
+.space>* {
     border: none;
     position: absolute;
     aspect-ratio: 1 / 1;
@@ -26,7 +26,24 @@
 star {
     opacity: 0.4;
     transform: scale(0.4);
-    animation: shine 0s linear infinite;
-    animation-delay: 0;
-    transition: all ease-in-out 4s;
+    display: inline-block;
+    animation-fill-mode: forwards;
+    transition-property: top, left, height;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--transition-duration, 4s);
+
+    animation-name: shine;
+    animation-duration: var(--animation-duration, 4s);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    background-color: var(--star-color, white);
+    height: var(--star-height, 1px);
+    top: var(--star-top, 0%);
+    left: var(--star-left, 0%);
+}
+
+.bigbang {
+    top: 50% !important;
+    left: 50% !important;
 }

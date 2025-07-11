@@ -85,6 +85,8 @@ body {
                                 var(--color-ds-4) 100%);
     background-attachment: fixed;
     box-sizing: border-box;
+    transition: opacity 2s ease-in-out;
+
 }
 
 button { cursor: pointer; }
@@ -111,23 +113,13 @@ h2 {
 
 
 
-/* Effects */
-.glass {
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-}
-
-.glass.smoke {
-    background-color: rgb(0, 0, 0, 0.2);
-
-}
-
-
-
-
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+
+.content.bigbang-active {
+  animation: fadeInOut 20s ease-in-out;
 }
