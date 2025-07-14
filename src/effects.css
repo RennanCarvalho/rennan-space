@@ -52,6 +52,9 @@
   opacity: 1;
 }
 
+.ray.infinite::after {
+  animation: ray-cast 4s infinite;
+}
 
 
 
