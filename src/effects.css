@@ -1,6 +1,6 @@
 /* Div */
-.fade-in-out {
-
+.content.fade-in-out {
+    animation: fadeInOut 20s ease-in-out;
 }
 
 .glass {
@@ -13,15 +13,49 @@
 
 }
 
-/* Button */
-.holographic::after {
-    height: 100%;
-    width: 100%;
-    color: red;
+/* Hover */
+.ray {
+  position: relative;
+  overflow: hidden;
+}
+
+.ray::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  height: 200%;
+  width: 200%;
+  opacity: 0.5;
+  background: linear-gradient(
+    135deg,
+    transparent 20%,
+    rgba(0, 255, 255, 0.3) 35%,
+    purple 40%,
+    rgba(0, 255, 255, 0.3) 45%,
+    transparent 55%,
+
+    transparent 60%,
+    rgba(255, 255, 0, 0.3) 63%,
+    rgba(0, 255, 255, 0.4) 64%,
+    rgba(255, 0, 255, 0.3) 65%,
+    transparent 70%
+  );
+  transform: translate(-100%, -100%);
+  transition: opacity 2s ease-in-out;
+  filter: blur(8px);
+
+}
+
+.ray:hover::after {
+  animation: ray-cast 2s ease;
+  opacity: 1;
 }
 
 
-/* Hide and seek */
+
+
+
 .seek {
   display: inline-flex;
   align-items: center;
@@ -31,11 +65,7 @@
 }
 
 .seek mat-icon, .seek mat-icon svg {
-  transition: transform 1s ease, color 1s ease;
-}
-
-.seek:hover mat-icon {
-  transform: scale(1.4) rotate(-10deg);
+  transition: all 1s ease;
 }
 
 .seek:hover mat-icon svg{
@@ -49,7 +79,7 @@
   max-width: 0;
   overflow: hidden;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 
 .seek:hover .hide {
@@ -59,13 +89,9 @@
 }
 
 
-.cooldown::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(var(--color-accent, #f90) 0% 0%, transparent 0% 100%);
-  z-index: 1;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), black 100%);
-  animation: cooldown-fill 2s linear forwards;
+.scale {
+  transition: all 1s ease;
+}
+.scale:hover {
+  transform: scale(1.4) rotate(-10deg);
 }
