@@ -140,11 +140,6 @@ h2 {
     height: 0;
 }
 
-
-mat-icon svg {
-    color: var(--color-font-gray);
-}
-
 button {
     display: inline-flex;
     align-items: end;

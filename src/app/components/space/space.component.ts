@@ -29,6 +29,7 @@ export class SpaceComponent {
 
   private stars: HTMLElement[] = [];
   private content!: HTMLElement;
+  private maxStars = 500; // valor padrão
 
   private generateIndex = 0;
   private rewriteIndex = 0;
@@ -47,10 +48,22 @@ export class SpaceComponent {
     this.spaceService.rewrite$.subscribe(() => this.startRewrite());
     this.spaceService.bigbang$.subscribe(() => this.BigBang());
   }
-
   ngAfterViewInit() {
+    this.adjustStarCountForScreen();
     this.Generate();
     this.content = document.querySelector('.content') as HTMLElement;
+  }
+
+  private adjustStarCountForScreen() {
+    const area = window.innerWidth * window.innerHeight;
+
+    if (area < 400_000) {
+      this.maxStars = 200; // telinha pequena
+    } else if (area < 800_000) {
+      this.maxStars = 300; // tablet ou celular maior
+    } else {
+      this.maxStars = 500; // desktop normal
+    }
   }
 
   ngOnDestroy() {
@@ -66,7 +79,7 @@ export class SpaceComponent {
   Generate() {
     const step = () => {
       const fragment = document.createDocumentFragment();
-      const end = Math.min(this.generateIndex + this.generateBatchSize, 500);
+      const end = Math.min(this.generateIndex + this.generateBatchSize, this.maxStars);
 
       for (let i = this.generateIndex; i < end; i++) {
         const star = document.createElement('star');

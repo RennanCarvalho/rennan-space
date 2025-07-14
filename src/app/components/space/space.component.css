@@ -18,12 +18,13 @@
 .space>* {
     border: none;
     position: absolute;
+    overflow: hidden;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    overflow: hidden;
 }
 
 star {
+    will-change: top, left, transform;
     opacity: 0.4;
     transform: scale(0.4);
     display: inline-block;
@@ -47,3 +48,5 @@ star {
     top: 50% !important;
     left: 50% !important;
 }
+
+
