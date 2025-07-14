@@ -73,9 +73,18 @@ export class SpaceComponent {
         star.style.setProperty('--star-height', `${this.getRandom(1, 2)}px`);
         star.style.setProperty('--star-top', `${this.getRandom(0, 100)}%`);
         star.style.setProperty('--star-left', `${this.getRandom(0, 100)}%`);
-        star.style.setProperty('--star-color', values[this.getRandom(0, values.length - 1)]);
-        star.style.setProperty('--animation-duration', `${this.getRandom(4, 14)}s`);
-        star.style.setProperty('--transition-duration',`${this.getRandom(4, 8)}s`);
+        star.style.setProperty(
+          '--star-color',
+          values[this.getRandom(0, values.length - 1)]
+        );
+        star.style.setProperty(
+          '--animation-duration',
+          `${this.getRandom(4, 14)}s`
+        );
+        star.style.setProperty(
+          '--transition-duration',
+          `${this.getRandom(4, 8)}s`
+        );
 
         fragment.appendChild(star);
         this.stars.push(star);
@@ -125,12 +134,9 @@ export class SpaceComponent {
 
   BigBang() {
     if (!this.canRewrite) return;
-
     if (!this.content) return;
 
-    this.content.classList.remove('bigbang-active');
-    void this.content.offsetWidth;
-    this.content.classList.add('bigbang-active');
+    this.FadeInOut();
 
     for (const star of this.stars) {
       star.classList.add('bigbang');
@@ -142,5 +148,11 @@ export class SpaceComponent {
 
       this.startRewrite();
     }, 10000);
+  }
+
+  FadeInOut() {
+    this.content.classList.remove('fade-in-out');
+    void this.content.offsetWidth;
+    this.content.classList.add('fade-in-out');
   }
 }

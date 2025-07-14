@@ -1,15 +1,4 @@
 
-/* Text */
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
-@keyframes blinkingCursor{
-  from { border-right-color: rgba(255,255,255,.75); }
-  to { border-right-color: transparent; }
-}
-
-
 /* Space */
 @keyframes orbit {
     100% { transform: rotate(360deg);    }

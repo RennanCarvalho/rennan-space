@@ -15,7 +15,9 @@ const ICONS = [
   'maximize',
   'minimize',
   'moon',
+  'pie',
   'power',
+  'star',
   'thumbs-up',
   'youtube',
   'logo'];

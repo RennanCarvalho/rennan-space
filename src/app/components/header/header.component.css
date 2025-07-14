@@ -46,8 +46,11 @@ nav a {
     gap: 5px;
 }
 
-.social mat-icon {
-  color: var(--color-font-gray);
-  width: 25px;
-  height: auto;
+
+.manipulate {
+  position:absolute;
+  left: 50px;
+  top: 75px;
+  color: var(--color-font-white);
+  gap: 10px;
 }

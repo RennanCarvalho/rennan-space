@@ -1,4 +1,8 @@
 /* Div */
+.fade-in-out {
+
+}
+
 .glass {
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
@@ -7,4 +11,61 @@
 .glass.smoke {
     background-color: rgb(0, 0, 0, 0.2);
 
+}
+
+/* Button */
+.holographic::after {
+    height: 100%;
+    width: 100%;
+    color: red;
+}
+
+
+/* Hide and seek */
+.seek {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  cursor: pointer;
+}
+
+.seek mat-icon, .seek mat-icon svg {
+  transition: transform 1s ease, color 1s ease;
+}
+
+.seek:hover mat-icon {
+  transform: scale(1.4) rotate(-10deg);
+}
+
+.seek:hover mat-icon svg{
+      color: var(--font-color-white);
+}
+
+.seek .hide {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-10px);
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.seek:hover .hide {
+  opacity: 1;
+  transform: translateX(0);
+  max-width: 250px;
+}
+
+
+.cooldown::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-accent, #f90) 0% 0%, transparent 0% 100%);
+  z-index: 1;
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), black 100%);
+  animation: cooldown-fill 2s linear forwards;
 }
