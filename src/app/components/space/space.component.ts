@@ -26,19 +26,20 @@ const values = Object.values(EObject) as EObject[];
 })
 export class SpaceComponent {
   @ViewChild('space') space!: ElementRef<HTMLDivElement>;
+  @ViewChild('explosion') explosion!: ElementRef<HTMLDivElement>;
 
   private stars: HTMLElement[] = [];
   private content!: HTMLElement;
-  private maxStars = 500; // valor padrão
+  private maxStars = 500;
 
   private generateIndex = 0;
-  private rewriteIndex = 0;
-
   private generateBatchSize = 50;
+
+  private rewriteIndex = 0;
   private rewriteBatchSize = 50;
 
   private canRewrite = true;
-  private rewriteCooldown = 20000;
+  private Cooldown = 20000;
 
   private rewriteFrameId: number | null = null;
 
@@ -58,11 +59,11 @@ export class SpaceComponent {
     const area = window.innerWidth * window.innerHeight;
 
     if (area < 400_000) {
-      this.maxStars = 200; // telinha pequena
+      this.maxStars = 200;
     } else if (area < 800_000) {
-      this.maxStars = 300; // tablet ou celular maior
+      this.maxStars = 300;
     } else {
-      this.maxStars = 500; // desktop normal
+      this.maxStars = 500;
     }
   }
 
@@ -86,18 +87,9 @@ export class SpaceComponent {
         star.style.setProperty('--star-height', `${this.getRandom(1, 2)}px`);
         star.style.setProperty('--star-top', `${this.getRandom(0, 100)}%`);
         star.style.setProperty('--star-left', `${this.getRandom(0, 100)}%`);
-        star.style.setProperty(
-          '--star-color',
-          values[this.getRandom(0, values.length - 1)]
-        );
-        star.style.setProperty(
-          '--animation-duration',
-          `${this.getRandom(4, 14)}s`
-        );
-        star.style.setProperty(
-          '--transition-duration',
-          `${this.getRandom(4, 8)}s`
-        );
+        star.style.setProperty('--star-color', values[this.getRandom(0, values.length - 1)]);
+        star.style.setProperty('--animation-duration', `${this.getRandom(4, 14)}s`);
+        star.style.setProperty('--transition-duration', `${this.getRandom(4, 8)}s`);
 
         fragment.appendChild(star);
         this.stars.push(star);
@@ -119,15 +111,12 @@ export class SpaceComponent {
     if (this.rewriteIndex >= this.stars.length) {
       this.rewriteIndex = 0;
       this.canRewrite = false;
-      setTimeout(() => (this.canRewrite = true), this.rewriteCooldown);
+      setTimeout(() => (this.canRewrite = true), this.Cooldown);
       this.rewriteFrameId = null;
       return;
     }
 
-    const end = Math.min(
-      this.rewriteIndex + this.rewriteBatchSize,
-      this.stars.length
-    );
+    const end = Math.min(this.rewriteIndex + this.rewriteBatchSize, this.stars.length);
     for (let i = this.rewriteIndex; i < end; i++) {
       const star = this.stars[i];
       star.style.setProperty('--star-top', `${this.getRandom(0, 100)}%`);
@@ -158,8 +147,8 @@ export class SpaceComponent {
       for (const star of this.stars) {
         star.classList.remove('bigbang');
       }
-
       this.startRewrite();
+      this.Explode();
     }, 10000);
   }
 
@@ -167,5 +156,11 @@ export class SpaceComponent {
     this.content.classList.remove('fade-in-out');
     void this.content.offsetWidth;
     this.content.classList.add('fade-in-out');
+  }
+
+  Explode() {
+    this.explosion.nativeElement.classList.remove('active');
+    void this.explosion.nativeElement.offsetWidth;
+    this.explosion.nativeElement.classList.add('active');
   }
 }

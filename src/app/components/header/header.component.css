@@ -8,8 +8,9 @@ section {
   left: 150px;
   color: var(--color-font-gray);
   border-radius: 50px;
-  padding: 5px;
-  box-shadow: 0 0 5px var(--color-font-white);
+box-shadow: 
+  2px 2px 2px -1px currentColor,   /* brilho difuso quente */
+  inset 1px 1px 1px 0px currentColor /* anel interno avermelhado */
 }
 
 .logo mat-icon {

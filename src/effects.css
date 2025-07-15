@@ -1,6 +1,6 @@
 /* Div */
 .content.fade-in-out {
-    animation: fadeInOut 20s ease-in-out;
+    animation: fade-in-out 20s ease-in-out;
 }
 
 .glass {
