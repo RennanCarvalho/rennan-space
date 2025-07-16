@@ -137,7 +137,7 @@ export class SpaceComponent {
   BigBang() {
     if (!this.canRewrite) return;
     if (!this.content) return;
-
+    this.Explode();
     this.FadeInOut();
 
     for (const star of this.stars) {
@@ -148,7 +148,6 @@ export class SpaceComponent {
         star.classList.remove('bigbang');
       }
       this.startRewrite();
-      this.Explode();
     }, 10000);
   }
 
