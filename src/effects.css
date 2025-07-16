@@ -47,13 +47,15 @@
 
 }
 
-.ray:hover::after {
-  animation: ray-cast 2s ease;
-  opacity: 1;
+.ray::after {
+  opacity: 0;
+  pointer-events: none;
 }
 
+.ray:hover::after,
 .ray.infinite::after {
-  animation: ray-cast 4s infinite;
+  opacity: 1;
+  animation: ray-cast 2s ease infinite;
 }
 
 
@@ -97,4 +99,15 @@
 }
 .scale:hover {
   transform: scale(1.4) rotate(-10deg);
+}
+
+
+.reveal {
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

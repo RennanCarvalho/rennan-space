@@ -8,7 +8,7 @@ section {
   left: 150px;
   color: var(--color-font-gray);
   border-radius: 50px;
-box-shadow: 
+  box-shadow: 
   2px 2px 2px -1px currentColor,   /* brilho difuso quente */
   inset 1px 1px 1px 0px currentColor /* anel interno avermelhado */
 }
@@ -16,7 +16,9 @@ box-shadow:
 .logo mat-icon {
   width: 50px;
   height: 50px;
+  cursor:pointer;
 }
+
 
 nav {
   background-color: color-mix(in oklab, white 10%, transparent);
