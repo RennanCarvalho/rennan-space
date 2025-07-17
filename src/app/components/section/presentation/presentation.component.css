@@ -7,7 +7,11 @@
     height: 70vh;
 }
 
-img {
-  position: absolute;
-  height: 200px;
+ .welcome h1 {
+  display: inline-flex;
+  gap: 1rem;
 }
+
+ 
+img {
+  height: 100px;}

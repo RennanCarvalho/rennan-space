@@ -4,6 +4,7 @@
     width: 100vw;
     height: 150px;
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    margin-bottom: -1px;
 }
 
 .reverse {

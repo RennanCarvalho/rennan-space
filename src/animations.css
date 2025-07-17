@@ -42,11 +42,23 @@
 
 
 @keyframes ray-cast {
+  from { transform: translate(-100%, -100%); }
+  to { transform: translate(100%, 100%); }
+}
+
+
+@keyframes cooldown {
   0% {
-    transform: translate(-100%, -100%);
+    background: darkred;
+    width: 0px;
+    opacity: 1;
   }
 
+  50% { background: orange; }
+
   100% {
-    transform: translate(100%, 100%);
+    background: green;
+    width: 24px;
+    opacity: 1;
   }
 }

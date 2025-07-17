@@ -18,7 +18,7 @@
   </div>
 
   <div class="manipulate flex-column left">
-    <button (click)="BigBang()" class="seek"><mat-icon svgIcon="pie" class="scale"></mat-icon><span class="hide">make an apple pie from scratch</span></button>
-    <button (click)="Rewrite()" class="seek"><mat-icon svgIcon="star" class="scale"></mat-icon><span class="hide">rearrange the heavens</span></button>
+    <button (click)="BigBang()" [class]="{ 'seek' : true, 'cooldown': onCooldown }"><mat-icon svgIcon="pie" class="scale"></mat-icon><span class="hide">make an apple pie from scratch</span></button>
+    <button (click)="Rewrite()" [class]="{ 'seek' : true, 'cooldown': onCooldown }"><mat-icon svgIcon="star" class="scale"></mat-icon><span class="hide">rearrange the heavens</span></button>
   </div>
 </section>
