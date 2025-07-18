@@ -12,7 +12,7 @@ import { SpaceService } from '../../services/space.service';
 })
 export class HeaderComponent {
   onCooldown = false;
-  private COOLDOWN = 20000;
+  private COOLDOWN = 35000;
 
   constructor(
     private _icons: IconService,

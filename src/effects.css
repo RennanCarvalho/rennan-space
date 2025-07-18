@@ -118,7 +118,7 @@
   bottom: -5px;
   width: 0;
   height: 2px;
-  animation: cooldown 20s linear;
+  animation: cooldown 35s linear;
   opacity: 0;
   background-color: #000
 }

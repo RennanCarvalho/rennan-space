@@ -49,7 +49,7 @@
 
 @keyframes cooldown {
   0% {
-    background: darkred;
+    background: red;
     width: 0px;
     opacity: 1;
   }
