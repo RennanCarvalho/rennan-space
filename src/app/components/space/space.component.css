@@ -11,7 +11,7 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    animation: orbit 1800s linear infinite;
+    animation: orbit 500s linear infinite;
     z-index: -10;
 }
 
