@@ -7,11 +7,12 @@
     height: 70vh;
 }
 
- .welcome h1 {
-  display: inline-flex;
-  gap: 1rem;
+ .welcome {
+  gap: 0.5rem;
 }
 
  
 img {
-  height: 100px;}
+  height: 70px;
+  border-radius: 50%;
+}

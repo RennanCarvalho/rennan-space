@@ -15,16 +15,16 @@ export class RevealOnScrollDirective implements AfterViewInit {
 
     switch (this.direction) {
       case 'up':
-        style.transform = 'translateY(50px)';
+        style.transform = 'translateY(100px)';
         break;
       case 'down':
-        style.transform = `translateY(-50px)`;
+        style.transform = `translateY(-100px)`;
         break;
       case 'left':
-        style.transform = 'translateX(-50px)';
+        style.transform = 'translateX(-100px)';
         break;
       case 'right':
-        style.transform = 'translateX(50px)';
+        style.transform = 'translateX(100px)';
         break;
     }
 
