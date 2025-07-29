@@ -102,11 +102,12 @@
   transform: scale(1.4) rotate(-10deg);
 }
 
-
 .reveal {
   opacity: 0;
   transition: transform 1.5s ease, opacity 1.5s ease;
+  will-change: transform, opacity;
 }
+
 
 .cooldown {
   pointer-events: none;

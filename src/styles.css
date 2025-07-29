@@ -75,7 +75,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 body {
     font-family: 'Space Grotesk', 'Roboto', 'Helvetica Neue', 'sans-serif';
     background: radial-gradient(circle at 50% -20%,
@@ -86,7 +85,6 @@ body {
     background-attachment: fixed;
     box-sizing: border-box;
     transition: opacity 2s ease-in-out;
-
 }
 
 button {
