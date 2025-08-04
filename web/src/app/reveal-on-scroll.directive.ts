@@ -26,7 +26,7 @@ export class RevealOnScrollDirective implements AfterViewInit {
         style.transform = 'translateX(100px)';
         break;
       case 'zoom':
-        style.transform = 'perspective(0) translateZ(100px)';
+        style.transform = 'scale(0.4)';
         break;
     }
 
@@ -36,7 +36,8 @@ export class RevealOnScrollDirective implements AfterViewInit {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               style.opacity = '1';
-              style.transform = 'translateX(0) translateY(0) translateZ(0)';
+              style.transform = 'scale(1)';
+              style.transform = 'translateX(0) translateY(0)';
               observer.unobserve(element);
             }
           });
