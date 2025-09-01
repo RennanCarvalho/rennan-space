@@ -6,6 +6,7 @@ const ICONS = [
   'at-sign',
   'chevrons-down',
   'code',
+  'coffee',
   'copy',
   'github',
   'home',

@@ -124,12 +124,21 @@ h2 {
 }
 
 
-.flex-row.left,
-.flex-column.left {
+.flex-row.start,
+.flex-column.start {
     align-items: start;
 
 }
 
+.flex-row.evenly,
+.flex-column.evenly {
+    justify-content: space-evenly;
+}
+
+.flex-row.between,
+.flex-column.between {
+    justify-content: space-between;
+}
 
 
 /* Scrollbar */
