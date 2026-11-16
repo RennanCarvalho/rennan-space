@@ -1,4 +1,4 @@
-* {
+:root {
     --color-brownstar: #671911;
     --color-redstar: #ffe595;
     --color-whitestar: #ffffff;
@@ -7,58 +7,30 @@
     --color-gasplanet: #c2a279;
 }
 
-.space {
+.space-canvas {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    animation: orbit 700s linear infinite;
+    pointer-events: none;
     z-index: -10;
+    background: transparent;
+    /* Rotação geral de órbita suave e lenta como você queria (700s) */
+    animation: orbit 700s linear infinite;
 }
-
-.space > * {
-    border: none;
-    position: absolute;
-    overflow: hidden;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-}
-
-star {
-    will-change: top, left, transform;
-    opacity: 0.4;
-    transform: scale(0.4);
-    display: inline-block;
-    animation-fill-mode: forwards;
-    transition-property: top, left, height;
-    transition-timing-function: ease-in-out;
-    transition-duration: var(--transition-duration, 4s);
-
-    animation-name: shine;
-    animation-duration: var(--animation-duration, 4s);
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
-    background-color: var(--star-color, white);
-    height: var(--star-height, 1px);
-    top: var(--star-top, 0%);
-    left: var(--star-left, 0%);
-}
-
-.bigbang {
-    top: 50% !important;
-    left: 50% !important;
-}
-
-
 .explosion.active {
   position: fixed;
   top: 50%;
   left: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
   width: 1px;
   height: 1px;
   opacity: 1;
-  animation: explode 20s linear;
-  opacity: 0;
+  /* Exatamente 20 segundos de explosão linear como no seu original */
+  animation: explode 20s linear forwards;
+}
 
+.fade-in-out {
+  animation: fade-in-out 10s ease-in-out;
 }
